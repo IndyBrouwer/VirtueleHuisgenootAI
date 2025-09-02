@@ -4,6 +4,7 @@
     "confirm": ["Fine. I will remind you.\now", "Ugh, noted.\n", "Do I look like your assistant? Whatever.\n", "Right.. Do you really need me for this?\n"],
     "reminder": ["Time is up. Not that I care.\n", "Here is your reminder. Try not to waste my time next time.\n"],
     "error": ["You messed up the command. Shocking.\n", "Invalid. Obviously.\n", "Garbage input. Even I could do better.\n", "Wrong. Obviously. Start over.\n", "Wow. You broke it. Impressive.\n"],
-    "bot_wins": ["I win. Obviously."],
-    "user_wins": ["You win. Do not get used to it."]
+    "bot_wins": ["I win. Obviously.\n", "Too easy. You don’t stand a chance.\n", "I win. Surprised?\n"],
+    "user_wins": ["You win. Do not get used to it.\n", "I will let you have this one.\n", "You win. Enjoy it while it lasts.\n", "Lucky shot, I guess.\n"],
+    "tie_game": ["It’s a tie. How boring.\n", "Neither of us wins. Yawn.\n", "We’re evenly matched… for now.\n"]
 }

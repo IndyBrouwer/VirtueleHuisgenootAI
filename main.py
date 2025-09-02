@@ -1,5 +1,6 @@
 import json
 import random
+import time
 import datetime
 import os
 
@@ -72,6 +73,24 @@ def choices():
 def reminder():
     print("Reminder mode")
 
+    # Inputs for reminder
+    message = input("What should I remind you about? ")
+    time_input = input("In how many seconds should I remind you? ")
+
+    try:
+        delay = int(time_input)
+    except ValueError:
+        print(colors.RED + get_response("error") + colors.END)
+        return choices()
+
+    print(colors.YELLOW + f"Got it! I will remind you in {delay} seconds." + colors.END)
+    
+    # Wait for the time
+    time.sleep(delay)
+
+    # Show the reminder
+    print(colors.YELLOW + f"\nReminder: {message}" + colors.END)
+
     # Continue loop
     choices()
 
@@ -93,8 +112,9 @@ def game():
     print("I choose:", bot_choice)
 
     if game_choice == bot_choice:
-        print("It is a tie. Boring.\n")
+        print(get_response("tie_game"))
     elif (
+        # Nicely align as it would be way too much for 1 line of code for if statement
         (game_choice == "rock" and bot_choice == "scissors") or
         (game_choice == "paper" and bot_choice == "rock") or
         (game_choice == "scissors" and bot_choice == "paper")
@@ -110,6 +130,7 @@ def game():
 def date():
     today = datetime.datetime.now()
     print("\nToday is", today.strftime(colors.YELLOW + "%d-%m-%Y\n" + colors.END))
+    print("Did you really needed me to tell you that?")
 
     # Continue loop
     choices()
