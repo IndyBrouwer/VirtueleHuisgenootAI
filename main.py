@@ -76,27 +76,28 @@ def reminder():
 
 
 def game():
-    print("Lets play a game, (your request not mine..)")
-    print("I already have my answer")
+    print("Lets play a game, (on your request not mine..)")
+    print("I already have my answer.")
 
-    game_choice = input("\nRock, Paper or Scissors?").lower
+    game_choice = input("\nRock, Paper, or Scissors?: ").lower()
 
     options = ["rock", "paper", "scissors"]
     if game_choice not in options:
-        print("That’s not even a valid move.")
-        return
+        print(colors.RED + get_response("error") + colors.END)
+
+        choices()
 
     bot_choice = random.choice(options)
     print("I choose:", bot_choice)
 
     if game_choice == bot_choice:
-        print("It’s a tie. Boring.")
+        print("It is a tie. Boring.")
     elif (
         (game_choice == "rock" and bot_choice == "scissors") or
         (game_choice == "paper" and bot_choice == "rock") or
         (game_choice == "scissors" and bot_choice == "paper")
     ):
-        print("You win. Don’t get used to it.")
+        print("You win. Don not get used to it.")
     else:
         print("I win. Obviously.")
 

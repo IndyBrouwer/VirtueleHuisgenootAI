@@ -1,7 +1,7 @@
 {
-    "greetings": ["\nWhat do you want?\n", "\nOh, it is you again.\n", "\nMake it quick.\n"],
-    "waiting": ["What do I have to do now..\n"],
+    "greetings": ["\nWhat do you want?\n", "\nOh, it is you again.\n", "\nMake it quick.\n", "Back already? Pathetic.\n", "Make this worth my time."],
+    "waiting": ["What do I have to do now..\n", "Well? I am waiting..\n", "Any day now.\n", "Still here, still unimpressed.\n"],
     "confirm": ["Fine. I will remind you.\now", "Ugh, noted.\n", "Do I look like your assistant? Whatever.\n", "Right.. Do you really need me for this?\n"],
     "reminder": ["Time is up. Not that I care.\n", "Here is your reminder. Try not to waste my time next time.\n"],
-    "error": ["You messed up the command. Shocking.\n", "Invalid. Obviously.\n"]
+    "error": ["You messed up the command. Shocking.\n", "Invalid. Obviously.\n", "Garbage input. Even I could do better.\n", "Wrong. Obviously. Start over.\n"]
 }
