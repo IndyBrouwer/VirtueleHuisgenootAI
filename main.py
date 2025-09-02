@@ -3,6 +3,9 @@ import random
 import datetime
 import os
 
+from format import colors
+from format import text_format
+
 MEMORY_FILE = "bot_memory.json"
 RESPONSES_FILE = "bot_responses.json"
 
@@ -33,7 +36,7 @@ def get_response(category):
     
 
 def Command_List():
-    print("COMMANDS\n")
+    print(colors.YELLOW + "\nCOMMANDS\n" + colors.END)
     print("Reminder")
     print("Game")
     print("Date")
@@ -59,31 +62,69 @@ def choices():
     elif choice == "help":
         Command_List()
     else:
-        "Wow. You broke it. Impressive."
+        print (colors.RED + "\nWow. You broke it. Impressive." + colors.END)
+
+        # Continue loop
+        choices()
 
 
 def reminder():
     print("Reminder mode")
 
+    # Continue loop
+    choices()
+
 
 def game():
-    print("Game mode")
+    print("Lets play a game, (your request not mine..)")
+    print("I already have my answer")
+
+    game_choice = input("\nRock, Paper or Scissors?").lower
+
+    options = ["rock", "paper", "scissors"]
+    if game_choice not in options:
+        print("That’s not even a valid move.")
+        return
+
+    bot_choice = random.choice(options)
+    print("I choose:", bot_choice)
+
+    if game_choice == bot_choice:
+        print("It’s a tie. Boring.")
+    elif (
+        (game_choice == "rock" and bot_choice == "scissors") or
+        (game_choice == "paper" and bot_choice == "rock") or
+        (game_choice == "scissors" and bot_choice == "paper")
+    ):
+        print("You win. Don’t get used to it.")
+    else:
+        print("I win. Obviously.")
+
+    # Continue loop
+    choices()
 
 
 def date():
-    print("Current date is ...")
     today = datetime.datetime.now()
-    print("Today is", today.strftime("%Y-%m-%d"))
+    print("\nToday is", today.strftime(colors.YELLOW + "%d-%m-%Y\n" + colors.END))
+
+    # Continue loop
+    choices()
 
 
 def change_name():
     print("Change the user its name")
 
+    # Continue loop
+    choices()
+
 
 def start():
     print(get_response("greetings"))
 
+    # Continue loop
     choices()
+
 
 if __name__ == "__main__":
     start()
