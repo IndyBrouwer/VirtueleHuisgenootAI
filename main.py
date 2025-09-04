@@ -71,11 +71,11 @@ def choices():
 
 
 def reminder():
-    print("Reminder mode")
-
     # Inputs for reminder
-    message = input("What should I remind you about? ")
-    time_input = input("In how many seconds should I remind you? ")
+    message = input("\nWhat should I remind you about? ")
+
+    print("\nFeatures will be paused while a reminder is active.")
+    time_input = input("In how many" +colors.YELLOW + " seconds " + colors.END + "should I remind you? ")
 
     try:
         delay = int(time_input)
@@ -83,12 +83,14 @@ def reminder():
         print(colors.RED + get_response("error") + colors.END)
         return choices()
 
-    print(colors.YELLOW + f"Got it! I will remind you in {delay} seconds." + colors.END)
+    # Confirm that reminder is set
+    print(colors.YELLOW + get_response("confirm") + colors.END)
     
     # Wait for the time
     time.sleep(delay)
 
     # Show the reminder
+    print(get_response("reminder"))
     print(colors.YELLOW + f"\nReminder: {message}" + colors.END)
 
     # Continue loop
