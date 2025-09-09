@@ -41,8 +41,7 @@ def Command_List():
     print("Reminder")
     print("Game")
     print("Date")
-    print("Name")
-
+    
     # Continue loop
     choices()
 
@@ -57,8 +56,6 @@ def choices():
         game()
     elif choice == "date":
         date()
-    elif choice == "name":
-        change_name()
     elif choice == "commands":
         Command_List()
     elif choice == "help":
@@ -149,7 +146,7 @@ def start():
     print(get_response("greetings"))
 
     # Start loop
-    choices()
+    Command_List()
 
 
 if __name__ == "__main__":

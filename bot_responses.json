@@ -37,7 +37,7 @@
     "bot_wins": 
     [
         "\nI win. Obviously.\n", 
-        "\nToo easy. You don’t stand a chance.\n", 
+        "\nToo easy. You don't stand a chance.\n", 
         "\nI win. Surprised?\n"
     ],
     "user_wins": 
@@ -49,8 +49,8 @@
     ],
     "tie_game": 
     [
-        "\nIt’s a tie. How boring.\n", 
+        "\nIt's a tie. How boring.\n", 
         "\nNeither of us wins. Yawn.\n", 
-        "\nWe’re evenly matched… for now.\n"
+        "\nWe're evenly matched.. for now.\n"
     ]
 }
