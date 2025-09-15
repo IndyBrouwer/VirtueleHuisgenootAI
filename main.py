@@ -7,20 +7,7 @@ import os
 from format import colors
 from format import text_format
 
-MEMORY_FILE = "bot_memory.json"
 RESPONSES_FILE = "bot_responses.json"
-
-
-# Load memory from JSON
-def load_memory():
-    if os.path.exists(MEMORY_FILE):
-        with open(MEMORY_FILE, "r") as f:
-            return json.load(f)
-
-# Save memory to JSON
-def save_memory(memory):
-    with open(MEMORY_FILE, "w") as f:
-        json.dump(memory, f)
 
 
 def load_responses():
@@ -41,6 +28,7 @@ def Command_List():
     print("Reminder")
     print("Game")
     print("Date")
+    print("Exit")
     
     # Continue loop
     choices()
@@ -50,16 +38,16 @@ def Command_List():
 def choices():
     choice = input(get_response("waiting")).lower() 
 
-    if choice == "reminder":
+    if choice == "reminder" or choice == "rem" or choice == "remind":
         reminder()
-    elif choice == "game":
+    elif choice == "game" or choice == "play":
         game()
-    elif choice == "date":
+    elif choice == "date" or choice == "today" or choice == "day":
         date()
-    elif choice == "commands":
+    elif choice == "commands" or choice == "help" or choice == "list":
         Command_List()
-    elif choice == "help":
-        Command_List()
+    elif choice == "exit" or choice == "quit" or choice == "stop":
+        Exit_Program()
     else:
         print(colors.RED + get_response("error") + colors.END)
 
@@ -135,11 +123,9 @@ def date():
     choices()
 
 
-def change_name():
-    print("Change the user its name")
-
-    # Continue loop
-    choices()
+def Exit_Program():
+    print("\nFinally some rest...\n")
+    exit
 
 
 def start():
